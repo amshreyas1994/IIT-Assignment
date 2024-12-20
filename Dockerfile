@@ -1,11 +1,11 @@
-# Use an official Nginx image as the base image
-FROM nginx:latest
+# Use an official Nginx image from the Docker Hub
+FROM nginx:alpine
 
-# Copy website files to Nginx HTML directory
+# Copy the website files into the default Nginx public directory
 COPY . /usr/share/nginx/html
 
-# Expose port 99
-EXPOSE 99
+# Expose port 80
+EXPOSE 80
 
-# Start Nginx
+# Command to run the Nginx server
 CMD ["nginx", "-g", "daemon off;"]
